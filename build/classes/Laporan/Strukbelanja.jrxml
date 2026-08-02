@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="225" pageHeight="842" columnWidth="201" leftMargin="13" rightMargin="11" topMargin="0" bottomMargin="0" isIgnorePagination="true" uuid="66925b6a-9f69-4ad8-89ce-db2127f296d3">
+	<property name="ireport.zoom" value="2.14358881000001"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="69"/>
+	<parameter name="totalbelanja" class="java.lang.String"/>
+	<parameter name="bayar" class="java.lang.String"/>
+	<parameter name="kembalian" class="java.lang.String"/>
+	<parameter name="nofaktur" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT * FROM Relasikeranjang where Relasikeranjang.no_faktur=$P{nofaktur}]]>
+	</queryString>
+	<field name="no_faktur" class="java.lang.String"/>
+	<field name="tanggal" class="java.sql.Date"/>
+	<field name="id_user" class="java.lang.String"/>
+	<field name="username" class="java.lang.String"/>
+	<field name="akses" class="java.lang.String"/>
+	<field name="kd_buku" class="java.lang.String"/>
+	<field name="nama_buku" class="java.lang.String"/>
+	<field name="harga" class="java.lang.Integer"/>
+	<field name="jumlah" class="java.lang.Integer"/>
+	<field name="sub_total" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="52" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="6" width="201" height="20" uuid="927f6463-a9c9-4863-b708-922ceb1f478f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[AVARTUBOOK]]></text>
+			</staticText>
+			<line>
+				<reportElement x="41" y="26" width="160" height="1" uuid="2ec62c42-e3cb-42c8-b739-b9ea19158060"/>
+			</line>
+			<staticText>
+				<reportElement mode="Transparent" x="19" y="27" width="201" height="12" uuid="46f7a1a0-2aa6-4c74-98dc-cf4a6e7b41b7"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Arial Rounded MT Bold" size="5"/>
+				</textElement>
+				<text><![CDATA[Jl.Sukaramai,kec. Tapung hulu, Kab.kampar ,Prov Riau ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="26" y="32" width="201" height="20" uuid="8eba52dd-f1a0-4fdb-b39e-efd4016dedb0"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Arial Rounded MT Bold" size="5" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Struk Ini Sebagai alat bukti anda,]]></text>
+			</staticText>
+			<line>
+				<reportElement x="54" y="39" width="143" height="1" uuid="ea2aada1-bab9-4d67-9b9c-2497109519db"/>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="11" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="58" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="38" width="201" height="19" backcolor="#CCCCCC" uuid="b4972826-911c-4c1d-bf74-2ebb8d26d0af"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="1" width="41" height="20" uuid="64bbb3a5-bee6-430f-9b8d-43732c1e82af"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[No Faktur :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="16" width="41" height="20" uuid="9579dbef-237f-4d12-884a-8e0a8602ea6b"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Tanggal    :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="41" y="17" width="100" height="20" uuid="cf285ccd-2740-44a0-8ed6-ca9d567a9567"/>
+				<textFieldExpression><![CDATA[$F{tanggal}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="37" width="42" height="20" uuid="a6b222c7-2844-448d-a81f-e0522f00f26c"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Kode Buku]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="44" y="37" width="63" height="20" uuid="4d543cc3-ca40-461e-b6f0-c507d5b65f6f"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Nama Buku]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="108" y="36" width="34" height="20" uuid="1b81ef28-6682-4210-8fd6-b74a0e80fa98"/>
+				<text><![CDATA[jumlah]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="144" y="36" width="55" height="20" uuid="ebcf80c2-323a-491c-a4d6-65b0cca219d6"/>
+				<text><![CDATA[sub_total]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="42" y="1" width="67" height="16" uuid="118a19c7-c7ee-47a6-b249-1e4fab5113f6"/>
+				<textFieldExpression><![CDATA[$F{no_faktur}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="41" y="38" width="1" height="20" uuid="df678b97-7251-423e-ac33-f00f5aba07eb"/>
+			</line>
+			<line>
+				<reportElement x="104" y="38" width="1" height="20" uuid="48207f2b-c72f-4f5e-ab26-fa522c2c8f14"/>
+			</line>
+			<line>
+				<reportElement x="142" y="38" width="1" height="20" uuid="50ecd6b5-35ba-47e2-a463-3329ce89da5b"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="-1" width="201" height="20" backcolor="#FFFF99" uuid="31cb1f57-eeea-45a4-a1eb-e2b7f829ec9c"/>
+			</rectangle>
+			<textField>
+				<reportElement x="142" y="0" width="55" height="20" uuid="b21985d0-5fe4-46a8-9850-e6bb14c7366c"/>
+				<textFieldExpression><![CDATA[$F{sub_total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="106" y="0" width="34" height="20" uuid="8fb93112-d57d-489f-83ce-e8459134f595"/>
+				<textFieldExpression><![CDATA[$F{jumlah}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="41" y="0" width="1" height="20" uuid="88960229-473a-4fd6-8d1e-1c4bd14f7edb"/>
+			</line>
+			<line>
+				<reportElement x="104" y="0" width="1" height="20" uuid="3b99f968-1fc4-45f5-ba8a-76a428f28ff6"/>
+			</line>
+			<line>
+				<reportElement x="142" y="-1" width="1" height="20" uuid="8d6c8397-c554-4ac2-958d-3ac8edbf5ecf"/>
+			</line>
+			<textField>
+				<reportElement x="0" y="0" width="41" height="20" uuid="8fd611b8-8977-46bb-96ab-2c66627fa3fa"/>
+				<textFieldExpression><![CDATA[$F{kd_buku}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="43" y="0" width="61" height="20" uuid="c6a734db-ce63-4371-ae4d-9e046bf109e3"/>
+				<textFieldExpression><![CDATA[$F{nama_buku}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="108">
+			<staticText>
+				<reportElement x="59" y="5" width="48" height="12" uuid="97c91b6a-d6c8-415d-836a-776cff8bbb52"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Total belanja]]></text>
+			</staticText>
+			<line>
+				<reportElement x="81" y="101" width="85" height="1" uuid="27f339f1-177e-4fdc-8cf3-12ac1c08a9ad"/>
+			</line>
+			<textField>
+				<reportElement x="109" y="3" width="79" height="14" uuid="7348c131-6fd3-4fde-8889-97027fabbbd3"/>
+				<textFieldExpression><![CDATA[$P{totalbelanja}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="119" y="38" width="66" height="15" uuid="68b72131-b64a-4cd5-85ac-4cff4666c39c"/>
+				<textFieldExpression><![CDATA[$P{kembalian}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="123" y="54" width="65" height="15" uuid="ef36dd70-2487-4fda-8aa3-f1a0a51c1dd4"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="124" y="66" width="56" height="15" uuid="a6172ebc-5bbc-4946-9949-24bfd2e1bcd8"/>
+				<textFieldExpression><![CDATA[$F{id_user}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="124" y="78" width="64" height="15" uuid="f248fbd9-4843-4a33-897f-d8ec8a34391c"/>
+				<textFieldExpression><![CDATA[$F{akses}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="119" y="23" width="66" height="14" uuid="a66a6f96-9363-48b4-9cd4-203da75f0933"/>
+				<textFieldExpression><![CDATA[$F{jumlah}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="81" y="53" width="100" height="1" uuid="a4b4fb5f-c487-4087-865d-f1e5fc55776a"/>
+			</line>
+			<staticText>
+				<reportElement x="72" y="23" width="32" height="12" uuid="8673cdb3-70c3-404b-857e-7058a51eeea2"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[jumlah]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="54" y="38" width="52" height="12" uuid="c172d181-7c3e-46fa-a0f6-59deb6f7cc15"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Uang Kembali]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="75" y="57" width="42" height="12" uuid="69a1c969-09f6-4430-8854-6827a058532e"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Pekanbaru,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="95" y="69" width="22" height="12" uuid="abd20986-be38-4129-b696-feaffb0ad453"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[User :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="90" y="81" width="27" height="12" uuid="0405f8b6-8309-4d30-b792-b5cb582d6e93"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Akses :]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isIgnorePagination="true" uuid="13de50ab-bb63-42f8-aa8c-9c1452d525c8">
+	<property name="ireport.zoom" value="1.0000000000000022"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT * FROM buku]]>
+	</queryString>
+	<field name="kd_buku" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama_buku" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="satuan" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="harga" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="stok" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="No" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[$V{No}]]></variableExpression>
+	</variable>
+	<variable name="jmlitem" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[$V{jmlitem}]]></variableExpression>
+	</variable>
+	<title>
+		<band height="55" splitType="Stretch">
+			<staticText>
+				<reportElement x="113" y="0" width="288" height="34" uuid="15102827-72ad-4482-ad04-da6811fb6973"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[AVARTUBOOK]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="113" y="23" width="408" height="20" uuid="725f628d-aa39-4492-ac3b-a8c0fd99706b"/>
+				<text><![CDATA[Jl.Sukaramai,kec. Tapung hulu, Kab.kampar ,Prov Riau ]]></text>
+			</staticText>
+			<line>
+				<reportElement x="120" y="40" width="270" height="1" uuid="82c88923-62c2-4aca-bfd9-dc42d44e2c33"/>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<rectangle>
+				<reportElement x="90" y="0" width="340" height="30" backcolor="#CCCCCC" uuid="3b0c837a-f6db-40f8-8246-7b4cca46c9dd"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="119" y="0" width="46" height="30" uuid="69e63568-a1c6-41e4-8451-7b947e4c8c75"/>
+				<text><![CDATA[Kode buku]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="168" y="0" width="100" height="30" uuid="2999ec74-62cc-4fae-9960-67ef2944a774"/>
+				<text><![CDATA[Nama Buku]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="268" y="0" width="49" height="30" uuid="8251aa6e-7be6-4c09-8d7c-946a780d1b7a"/>
+				<text><![CDATA[satuan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="318" y="0" width="70" height="30" uuid="d2de2a5a-3b8e-4ebb-90ea-36fdd9120a42"/>
+				<text><![CDATA[ harga buku]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="390" y="0" width="40" height="30" uuid="590c5f6b-0eee-47cb-a459-64b4da07df31"/>
+				<text><![CDATA[stok]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="92" y="0" width="25" height="30" uuid="50d2f7b2-7982-4bc2-bafc-3cb6e151e363"/>
+				<text><![CDATA[No]]></text>
+			</staticText>
+			<line>
+				<reportElement x="117" y="0" width="1" height="30" uuid="de55bb79-b128-42d8-9032-a9b09814dad0"/>
+			</line>
+			<line>
+				<reportElement x="165" y="0" width="1" height="30" uuid="708ea2cc-7690-4a78-bfb7-b42128ae4bcf"/>
+			</line>
+			<line>
+				<reportElement x="266" y="0" width="1" height="30" uuid="34faac7d-740a-4e39-95e6-278a5c56e79a"/>
+			</line>
+			<line>
+				<reportElement x="317" y="0" width="1" height="30" uuid="b9c0fd73-3a9d-4c63-9de7-da64db564523"/>
+			</line>
+			<line>
+				<reportElement x="388" y="0" width="1" height="30" uuid="1a7ce5b0-d2e3-424f-bb2c-4db2afe2d238"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="90" y="0" width="340" height="20" backcolor="#FFFF99" uuid="376ffac2-bfbc-44fa-89a5-f501eb80682c"/>
+			</rectangle>
+			<textField>
+				<reportElement x="269" y="0" width="51" height="20" uuid="a25c883d-5f78-4476-b281-2069e20f06ed"/>
+				<textFieldExpression><![CDATA[$F{satuan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="320" y="0" width="70" height="20" uuid="f8ba8603-f8f3-4aa9-87d8-3a61e43f67db"/>
+				<textFieldExpression><![CDATA[$F{harga}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="390" y="0" width="40" height="20" uuid="30eef618-5cc3-486c-ab4b-feeefc012f06"/>
+				<textFieldExpression><![CDATA[$F{stok}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="92" y="0" width="25" height="20" uuid="4f31efaf-37a3-4c29-bb9d-0e82e94ada72"/>
+				<textFieldExpression><![CDATA[$V{No}+1]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="388" y="0" width="1" height="20" uuid="a80778d1-189a-402b-a2a7-78ddfd4aebc4"/>
+			</line>
+			<line>
+				<reportElement x="317" y="0" width="1" height="20" uuid="a516cee4-3991-49ce-a0d0-ddb22b26aea1"/>
+			</line>
+			<line>
+				<reportElement x="266" y="0" width="1" height="20" uuid="a6b2ead7-6fdd-40c4-8f5d-39ba29dd2009"/>
+			</line>
+			<line>
+				<reportElement x="165" y="0" width="1" height="20" uuid="bd0b1230-3f54-45d6-ad59-8599d27ca8f3"/>
+			</line>
+			<line>
+				<reportElement x="117" y="0" width="1" height="20" uuid="973608c0-ee6c-4d01-a01e-8203582d7fd1"/>
+			</line>
+			<textField>
+				<reportElement x="171" y="0" width="100" height="20" uuid="6ca19752-c9a7-4d43-adbe-2de3a5060574"/>
+				<textFieldExpression><![CDATA[$F{nama_buku}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="120" y="0" width="45" height="20" uuid="dc037a26-79a3-4670-9aec-e58a0529f885"/>
+				<textFieldExpression><![CDATA[$F{kd_buku}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="143" splitType="Stretch">
+			<staticText>
+				<reportElement x="348" y="45" width="66" height="20" uuid="39a4fbde-bd44-4b21-a048-9a3a4773cd02"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Pekanbaru, ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="379" y="127" width="82" height="14" uuid="4e27fc5b-9e80-4ab9-9c15-ca77e5058004"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CEO Moses]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="45" width="103" height="14" uuid="7ce6198a-7199-4476-9bcb-156784f2ee62"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Julah Jenis Buku :]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="414" y="45" width="91" height="20" uuid="14c9b877-c0b6-4067-8f2c-dc184c86135e"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="385" y="65" width="76" height="20" uuid="7720e23d-95af-4d6d-9e13-47cc773f0a5f"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Maneger Unit]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="113" y="45" width="87" height="20" uuid="bfaba923-933a-412d-b3ad-faabd8b7e7aa"/>
+				<textFieldExpression><![CDATA[$V{jmlitem}+1]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="198" y="7" width="100" height="20" uuid="9babcb76-ee5e-42f6-af1d-24e21d6a31e5"/>
+				<textFieldExpression><![CDATA[$F{nama_buku}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>
